@@ -12,6 +12,9 @@ namespace ConsoleApplication
     static void Main(string[] args)
     {
       string startPath = @"c:\example\start";
+      
+      //Could consider using e.g. startPath = Console.ReadLine(); to set the file path.
+      
       string zipPath = @"c:\example\result.zip";
       string extractPath = @"c:\example\extract";
 
