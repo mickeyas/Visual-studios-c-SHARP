@@ -1,25 +1,27 @@
 using System;
 using System.IO;
+using System.IO.Compression;
 
 //C# File extracter program.
 //source: https://stackoverflow.com/questions/836736/unzip-files-programmatically-in-net
-
+//https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-compress-and-extract-files
 
 namespace ConsoleApplication
 {
-  class Program
-  {
-    static void Main(string[] args)
+    class Program
     {
-      string startPath = @"c:\example\start";
-      
-      //Could consider using e.g. startPath = Console.ReadLine(); to set the file path.
-      
-      string zipPath = @"c:\example\result.zip";
-      string extractPath = @"c:\example\extract";
+        static void Main(string[] args)
+        {
+            string startPath = @"c:\example\start";
+            
+            //Could use e.g. startPath = Console.ReadLine(); to set the file path.
+            
+            string zipPath = @"c:\example\result.zip";
+            string extractPath = @"c:\example\extract";
 
-      System.IO.Compression.ZipFile.CreateFromDirectory(startPath, zipPath);
-      System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, extractPath);
+            ZipFile.CreateFromDirectory(startPath, zipPath);
+
+            ZipFile.ExtractToDirectory(zipPath, extractPath);
+        }
     }
-  }
 }
